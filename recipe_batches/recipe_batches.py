@@ -14,7 +14,6 @@ def recipe_batches(recipe, ingredients):
       else: return 0 #ingredient needed for recipe not found.
     max_batches += 1
 
-
    
 
 
