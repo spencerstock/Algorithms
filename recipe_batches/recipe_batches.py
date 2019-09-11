@@ -3,7 +3,20 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  max_batches = 1 #start at 1 since we encounter the return max_batches-1 before the max_batches+1
+  while True:
+
+    for key in recipe.keys():
+      if(key in ingredients): #makes sure we have all ingredients required
+        ingredients[key] -= recipe.get(key)
+        if (ingredients[key] < 0):
+          return max_batches-1 #-1 because we're already <0 (aka: negative) so we should make 1 less than what we're at.
+      else: return 0 #ingredient needed for recipe not found.
+    max_batches += 1
+
+
+   
+
 
 
 if __name__ == '__main__':
